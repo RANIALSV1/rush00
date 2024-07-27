@@ -6,7 +6,7 @@
 /*   By: rahaddi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 19:40:54 by rahaddi           #+#    #+#             */
-/*   Updated: 2024/07/27 19:57:18 by rahaddi          ###   ########.fr       */
+/*   Updated: 2024/07/27 20:12:06 by rahaddi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	rush_print(int i, int j, int columns, int lines)
 {
 	if ((i == 0 && j == 0) || (i == 0 && j == lines - 1))
 		ft_putchar('A');
-	else if ((i == columns - 1 && j == 0) || (i == columns - 1 && j == lines - 1))
+	else if ((i == columns - 1 && j == 0)
+		|| (i == columns - 1 && j == lines - 1))
 		ft_putchar('C');
 	else if (j == 0 || j == lines - 1)
 		ft_putchar('B');
