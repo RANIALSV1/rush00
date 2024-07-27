@@ -6,7 +6,7 @@
 /*   By: rahaddi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 19:40:36 by rahaddi           #+#    #+#             */
-/*   Updated: 2024/07/27 19:51:39 by rahaddi          ###   ########.fr       */
+/*   Updated: 2024/07/27 22:20:02 by rahaddi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@ void	rush(int columns, int lines);
 
 int	main(void)
 {
-	rush(6, 5);
+	rush(3, 5);
 	return (0);
 }

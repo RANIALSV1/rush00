@@ -6,7 +6,7 @@
 /*   By: rahaddi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 19:53:28 by rahaddi           #+#    #+#             */
-/*   Updated: 2024/07/27 19:53:29 by rahaddi          ###   ########.fr       */
+/*   Updated: 2024/07/27 22:19:32 by rahaddi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,21 @@ void	rush(int columns, int lines)
 	i = 0;
 	j = 0;
 	if (columns <= 0 || lines <= 0)
-		write(1, "error", 6);
-	while (j < lines)
 	{
-		i = 0;
-		while (i < columns)
+		write(1, "error\n", 7);
+	}
+	else
+	{
+		while (j < lines)
 		{
-			rush_print(i, j, columns, lines);
-			i++;
+			i = 0;
+			while (i < columns)
+			{
+				rush_print(i, j, columns, lines);
+				i++;
+			}
+			j++;
+			ft_putchar('\n');
 		}
-		j++;
-		ft_putchar('\n');
 	}
 }
