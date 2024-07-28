@@ -6,7 +6,7 @@
 /*   By: rahaddi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 19:40:54 by rahaddi           #+#    #+#             */
-/*   Updated: 2024/07/27 22:19:34 by rahaddi          ###   ########.fr       */
+/*   Updated: 2024/07/28 11:24:17 by rahaddi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 void	ft_putchar(char c);
 
-void	rush_print(int i, int j, int columns, int lines)
+void	rush_print(int columns_count, int lines_count, int columns, int lines)
 {
-	if ((i == 0 && j == 0) || (i == 0 && j == lines - 1))
+	if ((columns_count == 1 && lines_count == 1) || (columns_count == 1
+			&& lines_count == lines))
 		ft_putchar('A');
-	else if ((i == columns - 1 && j == 0)
-		|| (i == columns - 1 && j == lines - 1))
+	else if ((columns_count == columns && lines_count == 1)
+		|| (columns_count == columns && lines_count == lines))
 		ft_putchar('C');
-	else if (j == 0 || j == lines - 1)
+	else if (lines_count == 1 || lines_count == lines)
 		ft_putchar('B');
-	else if ((i == 0 || i == columns - 1))
+	else if ((columns_count == 1 || columns_count == columns))
 		ft_putchar('B');
 	else
 		ft_putchar(' ');
@@ -31,26 +32,26 @@ void	rush_print(int i, int j, int columns, int lines)
 
 void	rush(int columns, int lines)
 {
-	int	i;
-	int	j;
+	int	columns_count;
+	int	lines_count;
 
-	i = 0;
-	j = 0;
+	columns_count = 1;
+	lines_count = 1;
 	if (columns <= 0 || lines <= 0)
 	{
 		write(1, "error\n", 7);
 	}
 	else
 	{
-		while (j < lines)
+		while (lines_count <= lines)
 		{
-			i = 0;
-			while (i < columns)
+			columns_count = 1;
+			while (columns_count <= columns)
 			{
-				rush_print(i, j, columns, lines);
-				i++;
+				rush_print(columns_count, lines_count, columns, lines);
+				columns_count++;
 			}
-			j++;
+			lines_count++;
 			ft_putchar('\n');
 		}
 	}
